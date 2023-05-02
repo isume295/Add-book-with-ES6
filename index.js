@@ -1,6 +1,8 @@
 /* eslint max-classes-per-file: ["error", 2] */
 import Book from './modules/book.js';
 import Store from './modules/bookstore.js';
+import getPageContent from './modules/getPage.js';
+import { DateTime } from './node_modules/luxon/src/luxon.js';
 
 const bookName = document.querySelector('.book');
 const authorName = document.querySelector('.author');
@@ -17,62 +19,13 @@ add.addEventListener('click', (e) => {
 
 window.onload = () => {
   store.display();
-  const date = new Date();
+  const date = DateTime.local().setZone('Europe/Paris');
   document.querySelector('.date').innerHTML = date;
 };
 
-const bookList = document.querySelector('.list-section');
-const addNewBook = document.querySelector('.main-container');
-const contact = document.querySelector('.contact-contain');
 const lists = document.querySelector('.list');
 const addnew = document.querySelector('.add-new');
 const contactus = document.querySelector('.contact');
-
-function getPageContent(link) {
-  switch (link) {
-    case '.list':
-
-      if (bookList.matches('.hidden') && !addNewBook.matches('.hidden') && contact.matches('.hidden')) {
-        bookList.classList.remove('hidden');
-        addNewBook.classList.add('hidden');
-      } else if (bookList.matches('.hidden') && addNewBook.matches('.hidden') && !contact.matches('.hidden')) {
-        contact.classList.add('hidden');
-        bookList.classList.remove('hidden');
-      }
-
-      lists.classList.add('active');
-      addnew.classList.remove('active');
-      contactus.classList.remove('active');
-      break;
-    case '.add-new':
-      if (!bookList.matches('.hidden') && addNewBook.matches('.hidden') && contact.matches('.hidden')) {
-        bookList.classList.add('hidden');
-        addNewBook.classList.remove('hidden');
-      } else if (bookList.matches('.hidden') && addNewBook.matches('.hidden') && !contact.matches('.hidden')) {
-        contact.classList.add('hidden');
-        addNewBook.classList.remove('hidden');
-      }
-      lists.classList.remove('active');
-      addnew.classList.add('active');
-      contactus.classList.remove('active');
-      break;
-    case '.contact':
-
-      if (!bookList.matches('.hidden') && addNewBook.matches('.hidden') && contact.matches('.hidden')) {
-        contact.classList.remove('hidden');
-        bookList.classList.add('hidden');
-      } else if (bookList.matches('.hidden') && !addNewBook.matches('.hidden') && contact.matches('.hidden')) {
-        contact.classList.remove('hidden');
-        addNewBook.classList.add('hidden');
-      }
-
-      lists.classList.remove('active');
-      addnew.classList.remove('active');
-      contactus.classList.add('active');
-      break;
-    default:
-  }
-}
 
 lists.addEventListener('click', () => {
   getPageContent('.list');
