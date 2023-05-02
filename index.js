@@ -1,4 +1,3 @@
-/* eslint max-classes-per-file: ["error", 2] */
 import Book from './modules/book.js';
 import Store from './modules/bookstore.js';
 import getPageContent from './modules/getPage.js';
