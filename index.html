@@ -1,0 +1,72 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+           <nav>
+               <div class="img-container">
+                <img src="book-logo.png"/> 
+               </div>
+            <ul>
+                <li><a href="#" class="list active" onclick="getPageContent('.list')" >List</a></li>
+                <li><a href="#" class="add-new" onclick="getPageContent('.add-new')">Add new</a></li>
+                <li><a href="#" class="contact" onclick="getPageContent('.contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="date-containter">
+        <p class="date"> </p>
+      </div>
+    <main>
+        <section class="main-container hidden">
+            <div class="add-book-container">
+            <h2>Add a new book</h2>
+            <div class="form-container">
+            <form  class="form">
+                <input class='book' type="text" name="books" placeholder="Book name">
+                <input class='author' type="text" name="authors" placeholder="Author">
+                <div class="btn-container"><button class="add">Add</button></div>
+                <span class="msg message">Book is sucessfully added</span>
+            </form>
+          </div>
+        </div>
+        </section>
+        <section class="list-section">
+            <div class="book-list-container">
+            <h2>All Awesome Books</h2>
+            <div class="contain">
+            </div>
+            </div>
+        </section>
+        <section class="contact-contain hidden">
+            <div class="contact-continar">
+                <h2>Contact information</h2>
+                <div class="contact-content">
+                <p>Do you have any questions or you just want to say "Hello"?<br>
+                You can reach out to us!
+                </p>
+                <ul>
+                <li> Our e-mail: <a>alishahsafdari905@gmail.com</a></li>
+                <li>Our phone number: +93744716508 </li>
+                <li> Our address : Microverse Students</li>
+                </ul>
+                </div>
+                </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>copyright</p>
+    </footer>
+
+</body>
+<script src="script.js"></script>
+
+</html>
