@@ -139,4 +139,4 @@ I would like to thank Microverse
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE.md) licensed.
+This project is [MIT](https://github.com/isume295/Add-book-with-ES6/blob/addBook-ES6/LICENCE.md) licensed.
